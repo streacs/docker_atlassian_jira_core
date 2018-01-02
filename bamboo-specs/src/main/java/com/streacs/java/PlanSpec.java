@@ -67,6 +67,7 @@ public class PlanSpec {
             project(),
             "STREACS Atlassian Jira Core", "B8E42A")
             .enabled(true)
+            .noNotifications()
             .linkedRepositories("DCK - STREACS Atlassian Jira Core (master)")
             .planBranchManagement(new PlanBranchManagement()
                 .createForVcsBranchMatching("^feature/.*|^release/.*|^develop")
