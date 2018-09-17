@@ -52,7 +52,7 @@ function test_container {
       docker run -t --rm --env-file files/environment.list ${DOCKER_REPOSITORY}/${APPLICATION_NAME}:develop rake spec /home/jira/spec
     ;;
     release*)
-      APPLICATION_RELEASE="$(git symbolic-ref --short HEAD | grep -o -E "(\d{1,2}\.){2,3}\d")"
+      APPLICATION_RELEASE="8.0.0-EAP03"
       docker run -t --rm --env-file files/environment.list ${DOCKER_REPOSITORY}/${APPLICATION_NAME}:${APPLICATION_RELEASE} rake spec /home/jira/spec
     ;;
     feature*)
@@ -76,7 +76,7 @@ function remove_container {
       docker rmi ${DOCKER_REPOSITORY}/${APPLICATION_NAME}:develop
     ;;
     release*)
-      APPLICATION_RELEASE="$(git symbolic-ref --short HEAD | grep -o -E "(\d{1,2}\.){2,3}\d")"
+      APPLICATION_RELEASE="8.0.0-EAP03"
       docker rmi ${DOCKER_REPOSITORY}/${APPLICATION_NAME}:${APPLICATION_RELEASE}
     ;;
     feature*)
@@ -100,7 +100,7 @@ function deploy_container {
       docker push ${DOCKER_REPOSITORY}/${APPLICATION_NAME}:develop
     ;;
     release*)
-      APPLICATION_RELEASE="$(git symbolic-ref --short HEAD | grep -o -E "(\d{1,2}\.){2,3}\d")"
+      APPLICATION_RELEASE="8.0.0-EAP03"
       docker push ${DOCKER_REPOSITORY}/${APPLICATION_NAME}:${APPLICATION_RELEASE}
     ;;
     feature*)
