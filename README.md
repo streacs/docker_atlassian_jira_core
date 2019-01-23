@@ -6,11 +6,10 @@ This is a Docker-Image for Atlassian JIRA Core based on Debian 9.
 Run Atlassian JIRA Core standalone and navigate to `http://[dockerhost]:8080` to finish configuration:
 
 ```bash
-docker run -ti -e ORACLE_JAVA_EULA=accepted -p 8080:8080 streacs/atlassian-jira-core:x.x.x
+docker run -ti -p 8080:8080 streacs/atlassian-jira-core:x.x.x
 ```
 
 ## Environment Variables
-* (M) ORACLE_JAVA_EULA = accepted
 * (O) JVM_ARGUMENTS =
 * (I) SYSTEM_USER = jira
 * (I) SYSTEM_GROUP = jira
@@ -31,15 +30,6 @@ docker run -ti -e ORACLE_JAVA_EULA=accepted -p 8080:8080 streacs/atlassian-jira-
 
 ## Volumes
 * /var/opt/atlassian/application-data/jira
-
-## Oracle end user license agreement
-To run this container you have to accept the terms of the Oracle Java end user license agreement.
-http://www.oracle.com/technetwork/java/javase/terms/license/index.html
-
-Add following environment variable to your configuration : 
-```bash
--e ORACLE_JAVA_EULA=accepted
-```
 
 ## Examples
 
